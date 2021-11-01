@@ -71,9 +71,7 @@ function mergeAndGroupByDataTypeFrom(a, b) {
             boolean.push(mergedArray[i])
         }
     }
-    groupedArray.push(string)
-    groupedArray.push(integer)
-    groupedArray.push(boolean)
+    groupedArray.push(string, integer, boolean)
 
     return groupedArray
 }
@@ -85,3 +83,39 @@ console.log("Merged and Grouped array:  ", mergeAndGroupByDataTypeFrom(c, d))
 
 
 //------------------------- QUESTION 4 -------------------------
+let arrayObject = [
+    {
+        id:3,
+        firstname:"saheed",
+        lastname: "adesuwa",
+    },
+    {
+        id:2,
+        firstname:"yetunde",
+        lastname: "hamad"
+    },
+    {
+        id:1,
+        firstname:"goodnews",
+        lastname: "confidence"
+    },
+    {
+        id:4,
+        firstname:"gideon",
+        lastname: "mojoyin"
+    }
+]
+
+function sortById(dictionary) {
+    let temp
+    for (let i = 0; i < dictionary.length; i++) {
+        for (let j = i + 1; j < dictionary.length; j++) {
+            if (dictionary[i].id < dictionary[j].id) {
+                temp = dictionary[i]
+                dictionary[i] = dictionary[j]
+                dictionary[j] = temp
+            }
+        }
+    }
+    return dictionary
+}
