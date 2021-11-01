@@ -14,7 +14,7 @@ function mergeArrays(a, b) {
 
 a = [2, 3, 1]
 b = [2, 1, 9, 5, 3]
-console.log("Merged array: " + mergeArrays(a, b))
+console.log("Merged array: ", mergeArrays(a, b))
 
 
 
@@ -35,7 +35,7 @@ function sortArrayInAscendingOrder(array) {
     return array;
 }
 
-console.log("Sorted in ascending order: " + sortArrayInAscendingOrder(mergedArray))
+console.log("Sorted in ascending order: ", sortArrayInAscendingOrder(mergedArray))
 
 // DESCENDING ORDER
 function sortArrayInDescendingOrder(array) {
@@ -52,8 +52,36 @@ function sortArrayInDescendingOrder(array) {
     return array;
 }
 
-console.log("Sorted in descending order: " + sortArrayInDescendingOrder(mergedArray))
+console.log("Sorted in descending order: ", sortArrayInDescendingOrder(mergedArray))
 
 
 
 //------------------------- QUESTION 3 -------------------------
+function mergeAndGroupByDataTypeFrom(a, b) {
+    mergedArray = mergeArrays(a, b)
+    let string = [], integer = [], boolean = []
+    let groupedArray = []
+
+    for (let i = 0; i < mergedArray.length; i++) {
+        if (typeof mergedArray[i] === "string") {
+            string.push(mergedArray[i])
+        } else if (typeof mergedArray[i] === "number") {
+            integer.push(mergedArray[i])
+        } else if (typeof mergedArray[i] === "boolean") {
+            boolean.push(mergedArray[i])
+        }
+    }
+    groupedArray.push(string)
+    groupedArray.push(integer)
+    groupedArray.push(boolean)
+
+    return groupedArray
+}
+
+c = ["a", 1, true]
+d = ["b", 2, false]
+console.log("Merged and Grouped array:  ", mergeAndGroupByDataTypeFrom(c, d))
+
+
+
+//------------------------- QUESTION 4 -------------------------
