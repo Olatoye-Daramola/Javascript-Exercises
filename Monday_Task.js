@@ -14,6 +14,22 @@ function mergeArrays(a, b) {
 
 a = [2, 3, 1]
 b = [2, 1, 9, 5, 3]
-console.log(mergeArrays(a, b))
+// console.log(mergeArrays(a, b))
 
 
+// QUESTION 2
+function sortArray(array) {
+    let temp
+    for (let i = 0; i < array.length; i++) {
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[i] > array[j]) {
+                temp = array[i]
+                array[i] = array[j]
+                array[j] = temp
+            }
+        }
+    }
+    return array;
+}
+
+console.log(sortArray(mergeArrays(a, b)))
