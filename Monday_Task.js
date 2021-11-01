@@ -107,38 +107,50 @@ let arrayObject = [
 ]
 
 // ASCENDING ORDER
-function sortObjectsByIdInAscendingOrder(dictionary) {
+function sortObjectsByIdInAscendingOrder(arrayOfObjects) {
     let temp
-    for (let i = 0; i < dictionary.length; i++) {
-        for (let j = i + 1; j < dictionary.length; j++) {
-            if (dictionary[i].id > dictionary[j].id) {
-                temp = dictionary[i]
-                dictionary[i] = dictionary[j]
-                dictionary[j] = temp
+    for (let i = 0; i < arrayOfObjects.length; i++) {
+        for (let j = i + 1; j < arrayOfObjects.length; j++) {
+            if (arrayOfObjects[i].id > arrayOfObjects[j].id) {
+                temp = arrayOfObjects[i]
+                arrayOfObjects[i] = arrayOfObjects[j]
+                arrayOfObjects[j] = temp
             }
         }
     }
-    return dictionary
+    return arrayOfObjects
 }
 
 console.log("\nArray of sorted objects (ascending order):\n", sortObjectsByIdInAscendingOrder(arrayObject))
 
 // DESCENDING ORDER
-function sortObjectsByIdInDescendingOrder(dictionary) {
+function sortObjectsByIdInDescendingOrder(arrayOfObjects) {
     let temp
-    for (let i = 0; i < dictionary.length; i++) {
-        for (let j = i + 1; j < dictionary.length; j++) {
-            if (dictionary[i].id < dictionary[j].id) {
-                temp = dictionary[i]
-                dictionary[i] = dictionary[j]
-                dictionary[j] = temp
+    for (let i = 0; i < arrayOfObjects.length; i++) {
+        for (let j = i + 1; j < arrayOfObjects.length; j++) {
+            if (arrayOfObjects[i].id < arrayOfObjects[j].id) {
+                temp = arrayOfObjects[i]
+                arrayOfObjects[i] = arrayOfObjects[j]
+                arrayOfObjects[j] = temp
             }
         }
     }
-    return dictionary
+    return arrayOfObjects
 }
 
 console.log("\nArray of sorted objects (descending order):\n", sortObjectsByIdInDescendingOrder(arrayObject))
 
 
+
 //------------------------- QUESTION 5 -------------------------
+function createNewFieldsFor(arrayOfObjects) {
+    let sortedArrayOfObjects = sortObjectsByIdInAscendingOrder(arrayOfObjects)
+    for (let i = 0; i < sortedArrayOfObjects.length; i++) {
+        sortedArrayOfObjects[i].fullName = sortedArrayOfObjects[i].firstname + " " + sortedArrayOfObjects[i].lastname
+        sortedArrayOfObjects[i].email = sortedArrayOfObjects[i].firstname.toLowerCase() + "@semicolon.africa"
+        sortedArrayOfObjects[i].nickName = sortedArrayOfObjects[i].firstname.charAt(0) + sortedArrayOfObjects[i].lastname.charAt(0)
+    }
+    return sortedArrayOfObjects
+}
+
+console.log("\nArray of Objects with new fields:\n", createNewFieldsFor(arrayObject))
