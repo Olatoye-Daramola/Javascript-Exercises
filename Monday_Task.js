@@ -14,7 +14,7 @@ function mergeArrays(a, b) {
 
 a = [2, 3, 1]
 b = [2, 1, 9, 5, 3]
-console.log("Merged array: ", mergeArrays(a, b))
+console.log("Merged array:\n", mergeArrays(a, b))
 
 
 
@@ -35,7 +35,7 @@ function sortArrayInAscendingOrder(array) {
     return array;
 }
 
-console.log("Sorted in ascending order: ", sortArrayInAscendingOrder(mergedArray))
+console.log("\nSorted in ascending order:\n", sortArrayInAscendingOrder(mergedArray))
 
 // DESCENDING ORDER
 function sortArrayInDescendingOrder(array) {
@@ -52,7 +52,7 @@ function sortArrayInDescendingOrder(array) {
     return array;
 }
 
-console.log("Sorted in descending order: ", sortArrayInDescendingOrder(mergedArray))
+console.log("\nSorted in descending order:\n", sortArrayInDescendingOrder(mergedArray))
 
 
 
@@ -78,7 +78,7 @@ function mergeAndGroupByDataTypeFrom(a, b) {
 
 c = ["a", 1, true]
 d = ["b", 2, false]
-console.log("Merged and Grouped array:  ", mergeAndGroupByDataTypeFrom(c, d))
+console.log("\nMerged and Grouped array:\n", mergeAndGroupByDataTypeFrom(c, d))
 
 
 
@@ -86,27 +86,45 @@ console.log("Merged and Grouped array:  ", mergeAndGroupByDataTypeFrom(c, d))
 let arrayObject = [
     {
         id:3,
-        firstname:"saheed",
-        lastname: "adesuwa",
+        firstname:"Saheed",
+        lastname: "Adesuwa",
     },
     {
         id:2,
-        firstname:"yetunde",
-        lastname: "hamad"
+        firstname:"Yetunde",
+        lastname: "Hamad"
     },
     {
         id:1,
-        firstname:"goodnews",
-        lastname: "confidence"
+        firstname:"Goodnews",
+        lastname: "Confidence"
     },
     {
         id:4,
-        firstname:"gideon",
-        lastname: "mojoyin"
+        firstname:"Gideon",
+        lastname: "Mojoyin"
     }
 ]
 
-function sortById(dictionary) {
+// ASCENDING ORDER
+function sortObjectsByIdInAscendingOrder(dictionary) {
+    let temp
+    for (let i = 0; i < dictionary.length; i++) {
+        for (let j = i + 1; j < dictionary.length; j++) {
+            if (dictionary[i].id > dictionary[j].id) {
+                temp = dictionary[i]
+                dictionary[i] = dictionary[j]
+                dictionary[j] = temp
+            }
+        }
+    }
+    return dictionary
+}
+
+console.log("\nArray of sorted objects (ascending order):\n", sortObjectsByIdInAscendingOrder(arrayObject))
+
+// DESCENDING ORDER
+function sortObjectsByIdInDescendingOrder(dictionary) {
     let temp
     for (let i = 0; i < dictionary.length; i++) {
         for (let j = i + 1; j < dictionary.length; j++) {
@@ -119,3 +137,8 @@ function sortById(dictionary) {
     }
     return dictionary
 }
+
+console.log("\nArray of sorted objects (descending order):\n", sortObjectsByIdInDescendingOrder(arrayObject))
+
+
+//------------------------- QUESTION 5 -------------------------
