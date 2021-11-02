@@ -12,7 +12,7 @@ function mergeArrays(a, b) {
     return newArray;
 }
 
-a = [2, 3, 1]
+a = [2, 3, 3,1]
 b = [2, 1, 9, 5, 3]
 console.log("Merged array:\n", mergeArrays(a, b))
 
