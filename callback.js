@@ -1,7 +1,7 @@
-function a (num, multiplier) {
+function a (num, bodmas) {
     let x = num
     for (let y = 1; y <= 12; y++) {
-        multiplier(x, y)
+        bodmas(x, y)
     }
 }
 
@@ -15,6 +15,10 @@ function addition (x, y) {
     console.log(`${x} + ${y} = ${result}`)
 }
 
+function square (x, y) {
+    let result = x * x
+    console.log(`${x} x ${x} = ${result}`)
+}
 
 for (let i = 1; i <= 12; i++) {
     a(i, multiply)
@@ -22,4 +26,8 @@ for (let i = 1; i <= 12; i++) {
 
 for (let i = 1; i <= 12; i++) {
     a(i, addition)
+}
+
+for (let i = 1; i <= 12; i++) {
+    a(i, square)
 }
