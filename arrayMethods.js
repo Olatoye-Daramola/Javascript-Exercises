@@ -71,3 +71,12 @@ let filteredFemale = objArray.filter(function (individual) {
 })
 
 console.log("\nFemales only:\n", filteredFemale)
+
+
+// ------------------- QUESTION 5 -------------------
+let fullName
+let ageAdded = objArray.map(function (individual) {
+    individual.age = individual.fullname.length - 1
+    return individual.age
+})
+console.log("\nAges added:\n", ageAdded)
